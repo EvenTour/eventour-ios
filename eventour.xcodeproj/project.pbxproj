@@ -30,6 +30,7 @@
 		7F82F7DF218229A100A005D1 /* Organizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82F7DE218229A100A005D1 /* Organizer.swift */; };
 		7F82F7FE21822B0600A005D1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F82F7EF21822AAC00A005D1 /* Alamofire.framework */; };
 		7F82F7FF21822B0600A005D1 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F82F7EF21822AAC00A005D1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7F900B9C2196431E0066A1F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F900B9B2196431E0066A1F6 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		7F82F7DC218228F300A005D1 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		7F82F7DE218229A100A005D1 /* Organizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organizer.swift; sourceTree = "<group>"; };
 		7F82F7E321822AAC00A005D1 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		7F900B9B2196431E0066A1F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 				53C8B8952193FD6200610270 /* OrganizersViewController.swift */,
 				53C8B8972193FF9300610270 /* OrganizerViewController.swift */,
 				53C8B8992193FFF200610270 /* OrganizerCell.swift */,
+				7F900B9B2196431E0066A1F6 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				7F82F7DF218229A100A005D1 /* Organizer.swift in Sources */,
 				53C8B8982193FF9300610270 /* OrganizerViewController.swift in Sources */,
 				531A99B6218196740041428D /* AppDelegate.swift in Sources */,
+				7F900B9C2196431E0066A1F6 /* ProfileViewController.swift in Sources */,
 				53C8B8822193D11500610270 /* EventViewController.swift in Sources */,
 				53B1A6962188314100BCAA2F /* EventsViewController.swift in Sources */,
 				53C8B8962193FD6300610270 /* OrganizersViewController.swift in Sources */,
