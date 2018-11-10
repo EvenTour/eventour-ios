@@ -9,13 +9,13 @@
 import Foundation
 
 class Event: Codable{
-var id : Int?
-var urlImage: String
-var event_name: String?
-var startDate: String?
-var endDate: String?
-var duration: Int?
-var createdAt: String?
-var updatedAt: String?
+    var id : Int?
+    var urlImage: String
+    var event_name: String?
+    var startDate: String?
+    var endDate: String?
+    var duration: Int?
+    var createdAt: String?
+    var updatedAt: String?
     var event_id: Int?
 }
