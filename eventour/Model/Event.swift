@@ -18,4 +18,19 @@ class Event: Codable{
     var createdAt: String?
     var updatedAt: String?
     var event_id: Int?
+
+
+
+    var isFavorite: Bool {
+        get {
+            return CatchUpStore.shared.isFavorite(event: self)
+        }
+        set {
+            CatchUpStore.shared.setFavorite(newValue, for: self)
+        }
+    }
+
+
 }
+
+

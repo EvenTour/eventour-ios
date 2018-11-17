@@ -15,9 +15,10 @@ class EventViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var event: Event?
+    var isFavorite = false
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -25,7 +26,26 @@ class EventViewController: UIViewController {
             logoImageView.setImageFrom(urlString: event.urlImage, withDefaultNamed: "no-image", withErrorNamed: "no-image")
             nameLabel.text = event.event_name
             descriptionLabel.text = event.startDate
+            isFavorite = event.isFavorite
+            updateFavoriteImage()
         }
     }
-
+    
+    func toggleFavorite() {
+        if event != nil {
+            isFavorite = !isFavorite
+            self.event!.isFavorite = isFavorite
+            updateFavoriteImage()
+        }
+    }
+    
+    func updateFavoriteImage() {
+        favoriteButton.imageView!.setImage(fromAsset: isFavorite ?
+            "heart-black" : "heart-border-black")
+    }
+    @IBAction func favoriteAction(_ sender: UIButton) {
+        
+        toggleFavorite()
+        
+    }
 }

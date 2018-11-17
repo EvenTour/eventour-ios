@@ -11,6 +11,15 @@ import UIKit
 import os
 
 extension UIImageView {
+    
+    func setImage(fromAsset name: String){
+        
+        DispatchQueue.main.async {
+            self.image = UIImage(named :name)
+        }
+        
+    }
+    
     func setImageFrom(urlString: String,
                       withDefaultNamed defaultName: String?,
                       withErrorNamed errorName: String?) {

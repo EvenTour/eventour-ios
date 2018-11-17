@@ -45,6 +45,12 @@ class EventsViewController: UICollectionViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if events.count > 0{
+            self.collectionView.reloadItems(at: [IndexPath(row: currentRow,section: 0)])
+        }
+    }
+    
     
     // MARK: UICollectionViewDataSource
 
