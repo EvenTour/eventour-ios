@@ -9,10 +9,10 @@
 import UIKit
 
 class EventCell: UICollectionViewCell {
-    
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIImageView!
+    
+    @IBOutlet weak var favoriteImageView: UIImageView!
     
     
     var isFavorite = false
@@ -23,8 +23,11 @@ class EventCell: UICollectionViewCell {
         nameLabel.text = event.event_name
         isFavorite = event.isFavorite
         
-        favoriteButton.setImage(fromAsset: isFavorite  ?
-            "heart-black" : "heart-border-black")    }
+        favoriteImageView.setImage(fromAsset: isFavorite  ?
+            "favorite-icon-black" : "favorite-icon-border-black")
+        
+        
+    }
     
    
     

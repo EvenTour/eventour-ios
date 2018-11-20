@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class Event: Codable{
     var id : Int?
@@ -19,7 +21,16 @@ class Event: Codable{
     var updatedAt: String?
     var event_id: Int?
 
-
+    
+    
+    
+    func construct ( object : NSManagedObject) {
+        
+        self.id = Int(object.value(forKey: "eventId").debugDescription)
+        self.event_name = object.value(forKey: "eventName").debugDescription
+  
+    }
+    
 
     var isFavorite: Bool {
         get {

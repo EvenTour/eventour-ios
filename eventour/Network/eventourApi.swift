@@ -70,7 +70,6 @@ class eventourApi {
     
     static private func getOrganizers(
         
-        
         from urlString: String,
         responseType: OrganizersResponse.Type,
         responseHandler: @escaping(((OrganizersResponse)->(Void))),
@@ -111,31 +110,25 @@ class eventourApi {
                 
                 
             })
-        
-        
+ 
     }
     
+ 
     
     static func getEventos(
-        
         
         responseHandler:  @escaping ((EventsResponse)->(Void)),
         errorHandler: @escaping ((Error)-> Void)){
         
         self.get(
-            
-            
             from: eventsUrl,
             responseType: EventsResponse.self,
             responseHandler: responseHandler,
             errorHandler: errorHandler)
         
-        
-        
-        
-        
     }
     
+
     static func getOrganizadores(
         
         

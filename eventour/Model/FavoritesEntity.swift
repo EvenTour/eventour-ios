@@ -9,11 +9,16 @@
 import Foundation
 import UIKit
 import CoreData
+import Alamofire
+
 
 class FavoritesEntity {
     
     let entityName = "Favorite"
-
+    
+     var favorites : [Favorite] = [Favorite]()
+    
+    
 let delegate = UIApplication.shared.delegate as! AppDelegate
 
 var context: NSManagedObjectContext = {
@@ -35,11 +40,12 @@ func add(from event: Event) {
     }
     let description = NSEntityDescription.entity(forEntityName: entityName, in: context)
     let entity = NSManagedObject(entity: description!, insertInto: context)
-    entity.setValue(event.id, forKey: "eventId")
+    entity.setValue(String(event.id!), forKey: "eventId")
     entity.setValue(event.event_name, forKey: "eventName")
     save()
 }
-
+    
+    
 func delete(for event: Event) {
     if let favorite = find(for: event) {
         context.delete(favorite)
@@ -50,7 +56,9 @@ func delete(for event: Event) {
 func all() -> [NSManagedObject]? {
     return find(withPredicate: nil)
 }
-
+    
+  
+ 
 func find(for event: Event) -> NSManagedObject? {
     let predicate = NSPredicate(format: "eventId = %@", String(event.id!))
     if let result = find(withPredicate: predicate) {
@@ -80,5 +88,7 @@ func eventIdsAsString() -> String? {
     }
     return nil
 }
+    
+    
 
 }

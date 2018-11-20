@@ -31,8 +31,11 @@ class CatchUpStore {
         return favoritesEntity.find(for: event) != nil
     }
     
-    func sourceIdsAsString() -> String? {
+    func eventIdsAsString() -> String? {
         return favoritesEntity.eventIdsAsString()
     }
+    
+    
+        
 }
 

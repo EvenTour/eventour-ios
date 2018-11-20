@@ -45,7 +45,8 @@ class OrganizersViewController: UICollectionViewController {
         os_log("%@",message)
         
     }
-   
+    
+    
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
        

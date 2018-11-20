@@ -10,25 +10,63 @@ import UIKit
 
 import os
 
+import CoreData
 
 private let reuseIdentifier = "Cell"
 
-class EventsViewController: UICollectionViewController {
-
-    var events : [Event] = [Event]()
+class EventsViewController: UICollectionViewController{
+    
+    var isRestrictedToFavorites: Bool = false
     var currentRow = 0
     
+    var events : [Event] = [Event]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+   
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        super.viewWillAppear(animated)
+        
+        updateData()
+        
+        
+    }
+    
+   
+    func updateData() {
+        print("isRestrictedToFavorites: \(self.isRestrictedToFavorites)")
+        if isRestrictedToFavorites{
+            
+            
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            
+            let context: NSManagedObjectContext = {
+                
+                return (UIApplication.shared.delegate as!
+                    AppDelegate).persistentContainer.viewContext
+                
+            }()
+           
+            
+            
+            
+            
+            self.collectionView.reloadData()
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            return
+        }
+      
         eventourApi.getEventos(
             responseHandler: handleResponse,
             errorHandler: handleError)
         
     }
     
+    
+    
+    
     func handleResponse(eventos: [Event]?){
+        
         if let events = eventos{
             
             self.events = events
@@ -45,13 +83,7 @@ class EventsViewController: UICollectionViewController {
         
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        if events.count > 0{
-            self.collectionView.reloadItems(at: [IndexPath(row: currentRow,section: 0)])
-        }
-    }
-    
-    
+
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -61,7 +93,6 @@ class EventsViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return events.count
     }
 
